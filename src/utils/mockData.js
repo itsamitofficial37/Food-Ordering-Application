@@ -1,6 +1,6 @@
 // Mock data of restaurantList 
 
-export const restaurantList = [
+export let restaurantList = [
     {
       type: "restaurant",
       data: {

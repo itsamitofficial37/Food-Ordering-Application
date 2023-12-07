@@ -1,4 +1,4 @@
-import { IMAGE_CDN } from "../utils/constant.js";
+import { IMAGE_CDN } from "../utils/constant";
 const RestaurantCard = (props) => {
   const { resData } = props;
   const {
@@ -16,7 +16,7 @@ const RestaurantCard = (props) => {
       <h3>{name}</h3>
       <h4>{cuisines.join(",")}</h4>
       <h4>{costForTwoString}</h4>
-      <h4>{}</h4>
+      <h4>{avgRating}</h4>
     </div>
   );
 };
