@@ -1,0 +1,1 @@
+This Project Basically a Food Ordering App Like Swiggy . Whole Project is build in React . Redux store is used for creating Store and Tailwind Css is used for styling the React Element and Parcel is used for Bundling the code.
