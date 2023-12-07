@@ -1,4 +1,4 @@
-import { SearchBar } from "./SearchBar";
+import SearchBar from "./SearchBar";
 import RestaurantContainer from "./RestaurantContainer";
 const Body = () => {
   return (
@@ -10,4 +10,3 @@ const Body = () => {
 };
 
 export default Body;
-// hello

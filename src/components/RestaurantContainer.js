@@ -1,5 +1,5 @@
+import {restaurantList} from "../utils/mockData";
 import RestaurantCard from "./RestaurantCard";
-import { restaurantList } from "../constant";
 
 const RestaurantContainer = () => {
   return (

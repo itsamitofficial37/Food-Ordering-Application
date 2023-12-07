@@ -1,4 +1,4 @@
-import { IMAGE_CDN } from "../constant";
+import { IMAGE_CDN } from "../utils/constant.js";
 const RestaurantCard = (props) => {
   const { resData } = props;
   const {
