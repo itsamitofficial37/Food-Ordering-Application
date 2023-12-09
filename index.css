@@ -63,3 +63,13 @@
 .filter-btn:hover {
   background-color: grey;
 }
+
+.search {
+  margin: 5px;
+  padding: 5px;
+}
+.search-btn {
+  margin: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
