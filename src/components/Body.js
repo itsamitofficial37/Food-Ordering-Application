@@ -1,6 +1,7 @@
 import RestaurantCard from "../components/RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import NoResult from "./NoResult";
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -51,7 +52,7 @@ const Body = () => {
             const filteredRestaurant = listOfRestaurant.filter(
               (res) => res.info.avgRating > 4
             );
-            setListOfRestaurant(filteredRestaurant);
+            setFilteredRestaurant(filteredRestaurant);
           }}
         >
           Top Rated Restaurants
