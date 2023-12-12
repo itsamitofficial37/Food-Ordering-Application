@@ -73,3 +73,20 @@
   padding: 5px;
   cursor: pointer;
 }
+.shimmer-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.shimmer-card {
+  flex-basis: 250px;
+  width: 150px;
+  height: 350px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: lightgray;
+  border-color: #d3d5df;
+  box-shadow: 0 4px 7px 0 rgb(218 220 230 / 60%);
+}
