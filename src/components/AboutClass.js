@@ -4,27 +4,33 @@ class AboutClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0,
+      userInfo: {
+        name: "Dummy Name",
+        location: "Dummy Location",
+      },
     };
   }
-  componentDidMount() {}
+  async componentDidMount() {
+    const data = await fetch("https://api.github.com/users/itsamitofficial37");
+    const json = await data.json();
+    this.setState({
+      userInfo: json,
+    });
+  }
+
+  componentDidUpdate() {
+  }
+
+  componentWillUnmount() {
+  }
 
   render() {
-    const { name } = this.props;
-    const { count } = this.state;
+    const { name, location, avatar_url } = this.state.userInfo;
     return (
       <div>
-        Name : {name}
-        <h1>count : {count}</h1>
-        <button
-          onClick={() =>
-            this.setState({
-              count: count + 1,
-            })
-          }
-        >
-          Count ++
-        </button>
+        <img src={avatar_url} />
+        <h1>Name : {name}</h1>
+        <h1>Location : {location}</h1>
       </div>
     );
   }
