@@ -11,12 +11,12 @@ import { lazy, Suspense } from "react";
 // code spiliting
 // lazy loading
 // on demand loading
-// Dynamic importing 
+// Dynamic importing
 
 const AboutClass = lazy(() => import("./components/AboutClass"));
 const Contact = lazy(() => import("./components/Contact"));
 
-const Grocery = lazy(()=> import("./Grocery-component/GroceryHeader"));
+const Grocery = lazy(() => import("./components/Grocery"));
 
 const AppLayout = () => {
   return (
@@ -47,7 +47,6 @@ const appRoutes = createBrowserRouter([
         path: "/contact",
         element: (
           <Suspense fallback={<h1>Loading</h1>}>
-           
             <Contact />
           </Suspense>
         ),
@@ -57,9 +56,13 @@ const appRoutes = createBrowserRouter([
         element: <RestaurantMenu />,
       },
       {
-        path : "/grocery",
-        element : <Grocery/>
-      }
+        path: "/grocery",
+        element: (
+          <Suspense>
+            <Grocery />
+          </Suspense>
+        ),
+      },
     ],
   },
 ]);
