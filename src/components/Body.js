@@ -18,7 +18,7 @@ const Body = () => {
     filteredRestaurant,
     setFilteredRestaurant
   );
-  
+
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   if (isOnline === false) {
@@ -27,21 +27,23 @@ const Body = () => {
 
   return (
     <div className="body">
-      <div className="search-container">
+      <div className="search m-4 p-4">
         <input
           type="text"
-          className="search"
+          className="border border-solid border-blac p-2"
           value={searchText}
-          placeholder="search your restaurant"
+          placeholder=" Search your restaurant"
           onChange={(e) => setSearchText(e.target.value)}
         />
-      </div>
-
-      <button onClick={handleSearch}> Search</button>
-
-      <div className="filter">
         <button
-          className="filter-btn"
+          className="px-4 py-2 bg-green-100 m-4 rounded-lg"
+          onClick={handleSearch}
+        >
+          
+          Search
+        </button>
+        <button
+          className="px-4 py-2 bg-green-100 m-4 rounded-lg"
           onClick={() => {
             const filteredRestaurant = listOfRestaurant.filter(
               (res) => res.info.avgRating > 4
@@ -51,18 +53,20 @@ const Body = () => {
         >
           Top Rated Restaurants
         </button>
+        
       </div>
+
+      
       {listOfRestaurant.length === 0 ? (
         <Shimmer />
       ) : (
-        <div className="res-container">
+        <div  className="flex flex-wrap">
           {filteredRestaurant.map((restaurant) => (
             <Link
               key={restaurant?.info?.id}
               to={"/restaurant/" + restaurant?.info?.id}
             >
-              {restaurant.info?.aggregatedDiscountInfoV3?.header
- ? (
+              {restaurant.info?.aggregatedDiscountInfoV3?.header ? (
                 <RestaurantCardPromoted resData={restaurant} />
               ) : (
                 <RestaurantCard resData={restaurant} />

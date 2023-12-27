@@ -27,10 +27,10 @@ class AboutClass extends React.Component {
   render() {
     const { name, location, avatar_url } = this.state.userInfo;
     return (
-      <div>
+      <div  className="user-card m-4 p-4 bg-gray-50 rounded-lg">
         <img src={avatar_url} />
-        <h1>Name : {name}</h1>
-        <h1>Location : {location}</h1>
+        <h1 className="font-bold">Name : {name}</h1>
+        <h1 className="font-bold" >Location : {location}</h1>
       </div>
     );
   }
