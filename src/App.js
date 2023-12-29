@@ -6,9 +6,11 @@ import Footer from "./components/Footer";
 import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
-import { lazy, Suspense,} from "react";
+import { lazy, Suspense } from "react";
 import UserContext from "./utils/UserContext";
-
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 // code spiliting
 // lazy loading
@@ -21,32 +23,32 @@ const Contact = lazy(() => import("./components/Contact"));
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const AppLayout = () => {
- 
-  const [userName , setUserName] = useState();
+  const [userName, setUserName] = useState();
 
   const handleLogin = (userData) => {
     // For simplicity, we just set the user in the state
     setUserName(userData);
   };
 
-  // authenication 
-  useEffect(()=> {
-    // Api Call 
+  // authenication
+  useEffect(() => {
+    // Api Call
     const data = {
-      name : "AMIT"
-    }
+      name: "AMIT",
+    };
     setUserName(data.name);
-  }, [])
- 
+  }, []);
+
   return (
-    <UserContext.Provider value = {{loggedInUser :  userName , setUserName}}>
-    <div>
-    
-      <Header/>
-      <Outlet/>
-      <Footer/>
-    </div>
-     </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div>
+          <Header />
+          <Outlet />
+          <Footer />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -84,6 +86,10 @@ const appRoutes = createBrowserRouter([
             <Grocery />
           </Suspense>
         ),
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

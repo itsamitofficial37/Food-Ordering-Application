@@ -2,12 +2,17 @@ import Logo from "../assets/Logo.jpg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useStatus from "../utils/useStatus";
+import { useSelector } from "react-redux";
 const Header = () => {
   const [isLoggedIn, setLoggedIn] = useState(false);
   const handleToggle = () => {
     setLoggedIn((prevLoggedIn) => !prevLoggedIn);
   };
   const isOnline = useStatus();
+
+  // subscribing to the store using useselector
+  const cartItems = useSelector((store) => store.cart.items);
+console.log(cartItems)
   return (
     <div className="flex justify-between bg-pink-100 shadow-lg sm:bg-yellow-50 lg:bg-green-50">
       <div className="logo-container">
@@ -31,7 +36,7 @@ const Header = () => {
             <Link to="/grocery">Grocery</Link>
           </li>
           <li className="px-4 font-bold text-xl">
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">Cart({cartItems.length}-items)</Link>
           </li>
 
           {isLoggedIn ? (

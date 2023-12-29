@@ -60,14 +60,7 @@ const Body = () => {
           Top Rated Restaurants
         </button>
       </div>
-      <div>
-        <lable> Username : </lable>
-        <input className="border border-black" 
-        value = { loggedInUser}
-        onChange={(e)=> setUserName(e.target.value)} 
-        />
-
-      </div>
+      
 
       {listOfRestaurant.length === 0 ? (
         <Shimmer />
