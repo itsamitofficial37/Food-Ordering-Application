@@ -1,4 +1,5 @@
 import React from "react";
+import UserContext from "../utils/UserContext";
 
 class AboutClass extends React.Component {
   constructor(props) {
@@ -24,12 +25,19 @@ class AboutClass extends React.Component {
   componentWillUnmount() {
   }
 
+  
   render() {
     const { name, location, avatar_url } = this.state.userInfo;
     return (
       <div  className="user-card m-4 p-4 bg-gray-50 rounded-lg">
         <img src={avatar_url} />
         <h1 className="font-bold">Name : {name}</h1>
+        <div  className="font-bold">
+          Email :  
+          <UserContext.Consumer >
+            {(data)=> data.email}
+          </UserContext.Consumer>
+        </div>
         <h1 className="font-bold" >Location : {location}</h1>
       </div>
     );

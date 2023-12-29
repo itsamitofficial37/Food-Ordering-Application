@@ -31,9 +31,11 @@ const RestaurantMenu = () => {
       </ul>
       <div>
         {categories.map((c , index) => (
-          <RestaurantCategory  showItem = {index === showIndex ? true : false}
-          setShowIndex={() => setShowIndex(index)}
-          key={c.card?.card.title} data={c?.card?.card} />
+          <RestaurantCategory  
+          showItem = {index === showIndex ? true : false}
+          setShowIndex={() => setShowIndex((prevIndex) => (prevIndex === null ? index : null))}
+          key={c.card?.card.title} data={c?.card?.card} 
+          name = "dummy Name "/>
         ))}
       </div>
     </div>

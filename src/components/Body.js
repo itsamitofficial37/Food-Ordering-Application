@@ -8,9 +8,14 @@ import useStatus from "../utils/useStatus";
 import NoResult from "./NoResult";
 import useRestaurantList from "../utils/useRestaurantList";
 import useSearchRestaurant from "../utils/useSearchRestaurant";
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
+
 
 const Body = () => {
   const isOnline = useStatus();
+
+  
   const { listOfRestaurant, filteredRestaurant, setFilteredRestaurant } =
     useRestaurantList();
   const { searchText, setSearchText, handleSearch } = useSearchRestaurant(
@@ -18,6 +23,8 @@ const Body = () => {
     filteredRestaurant,
     setFilteredRestaurant
   );
+
+  const {setUserName ,  loggedInUser} = useContext(UserContext)
 
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
@@ -39,7 +46,6 @@ const Body = () => {
           className="px-4 py-2 bg-green-100 m-4 rounded-lg"
           onClick={handleSearch}
         >
-          
           Search
         </button>
         <button
@@ -53,14 +59,20 @@ const Body = () => {
         >
           Top Rated Restaurants
         </button>
-        
+      </div>
+      <div>
+        <lable> Username : </lable>
+        <input className="border border-black" 
+        value = { loggedInUser}
+        onChange={(e)=> setUserName(e.target.value)} 
+        />
+
       </div>
 
-      
       {listOfRestaurant.length === 0 ? (
         <Shimmer />
       ) : (
-        <div  className="flex flex-wrap">
+        <div className="flex flex-wrap">
           {filteredRestaurant.map((restaurant) => (
             <Link
               key={restaurant?.info?.id}

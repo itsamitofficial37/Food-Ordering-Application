@@ -2,10 +2,10 @@ import dropdown from "../assets/dropdown.png";
 import ItemList from "./ItemLists";
 
 
-const RestaurantCategory = ({ data ,  showItem ,  setShowIndex}) => {
-  // const [showItem, setShowItem] = useState(false);
+const RestaurantCategory = ({ data ,  showItem ,  setShowIndex }) => {
+  
   const handleClick = () => {
-    setShowIndex(!showItem);
+    setShowIndex();
   };
   return (
     <div>
@@ -17,9 +17,10 @@ const RestaurantCategory = ({ data ,  showItem ,  setShowIndex}) => {
           <span>
             <img src={dropdown} />
           </span>
+         
         </div>
 
-       { showItem && <ItemList items={data.itemCards} />} 
+       { showItem && <ItemList items={data.itemCards}  />} 
       </div>
     </div>
   );
