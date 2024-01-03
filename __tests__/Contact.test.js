@@ -4,7 +4,7 @@ import Contact from "../src/components/Contact";
 
 // contact us heading 
 
-test("Should render Contact Us Page heading", () => {
+it("Should load heading in  Contact componentr", () => {
   render(<Contact />);
   const heading = screen.getByRole("heading");
   expect(heading).toBeInTheDocument();
@@ -12,7 +12,7 @@ test("Should render Contact Us Page heading", () => {
 
 // submit button is there or not 
 
-test("Should button is there in contact component", ()=> {
+it("Should  load button in contact component", ()=> {
   render(<Contact/>);
 
   // querying 
@@ -25,7 +25,7 @@ test("Should button is there in contact component", ()=> {
 
 // submit text 
 
-test("Should submit text is there in contact component", ()=> {
+it("Should  load submit text  in contact component", ()=> {
   render(<Contact/>);
 
   const submitText = screen.getByText("Submit");
@@ -35,7 +35,7 @@ test("Should submit text is there in contact component", ()=> {
 
 // input text is there pr not 
 
-test("Should input is there in contact component", ()=> {
+it("Should load  input in contact component", ()=> {
   render(<Contact/>)
 
   const textbox = screen.getAllByRole("textbox");
@@ -46,7 +46,7 @@ test("Should input is there in contact component", ()=> {
 
 // placeholder name check 
 
-test("Should placeholder have name  is there in contact component", ()=> {
+it("Should  load placeholder  name  in contact component", ()=> {
   render(<Contact/>)
 
   const placeholder = screen.getByPlaceholderText("name");
@@ -54,3 +54,6 @@ test("Should placeholder have name  is there in contact component", ()=> {
 
   expect(placeholder).toBeInTheDocument();
 })
+
+
+
