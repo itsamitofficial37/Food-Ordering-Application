@@ -1,21 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1704262383118" clover="3.2.0">
-  <project timestamp="1704262383118" name="All files">
-    <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2" elements="6" coveredelements="6" complexity="0" loc="4" ncloc="4" packages="2" files="2" classes="2"/>
-    <package name="Food Order app">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="sum.js" path="C:\Users\Tech Solution\Desktop\Food Order app\sum.js">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
+<coverage generated="1704273574825" clover="3.2.0">
+  <project timestamp="1704273574826" name="All files">
+    <metrics statements="35" coveredstatements="34" conditionals="10" coveredconditionals="7" methods="13" coveredmethods="13" elements="58" coveredelements="54" complexity="0" loc="35" ncloc="35" packages="2" files="6" classes="6"/>
+    <package name="components">
+      <metrics statements="31" coveredstatements="30" conditionals="10" coveredconditionals="7" methods="13" coveredmethods="13"/>
+      <file name="Body.js" path="C:\Users\Tech Solution\Desktop\Food Order app\src\components\Body.js">
+        <metrics statements="14" coveredstatements="13" conditionals="6" coveredconditionals="4" methods="5" coveredmethods="5"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="20" count="7" type="stmt"/>
+        <line num="21" count="7" type="stmt"/>
+        <line num="27" count="7" type="stmt"/>
+        <line num="29" count="7" type="stmt"/>
+        <line num="31" count="7" type="cond" truecount="1" falsecount="1"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="35" count="7" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="56" count="9" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="71" count="32" type="stmt"/>
       </file>
-    </package>
-    <package name="Food Order app.src.components">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="Contact.js" path="C:\Users\Tech Solution\Desktop\Food Order app\src\components\Contact.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="5" type="stmt"/>
+      </file>
+      <file name="Header.js" path="C:\Users\Tech Solution\Desktop\Food Order app\src\components\Header.js">
+        <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="3" methods="4" coveredmethods="4"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="14" count="9" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+      </file>
+      <file name="RestaurantCard.js" path="C:\Users\Tech Solution\Desktop\Food Order app\src\components\RestaurantCard.js">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="34" type="stmt"/>
+        <line num="5" count="34" type="stmt"/>
+        <line num="13" count="34" type="stmt"/>
+        <line num="14" count="34" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="8" type="stmt"/>
+        <line num="28" count="33" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="appStore.js" path="C:\Users\Tech Solution\Desktop\Food Order app\src\utils\appStore.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+      <file name="constant.js" path="C:\Users\Tech Solution\Desktop\Food Order app\src\utils\constant.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
       </file>
     </package>
   </project>

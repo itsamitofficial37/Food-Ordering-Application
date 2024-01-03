@@ -1,0 +1,74 @@
+import { fireEvent, render, screen } from "@testing-library/react";
+import Header from "../src/components/Header";
+import { Provider } from "react-redux";
+import appStore from "../src/utils/appStore";
+import { BrowserRouter } from "react-router-dom";
+
+import "@testing-library/jest-dom";
+
+describe("Test cases of Header Component", () => {
+  it("Should load Header Component with login button", () => {
+    render(
+      <BrowserRouter>
+        <Provider store={appStore}>
+          <Header />
+        </Provider>
+      </BrowserRouter>
+    );
+
+    const loginButton = screen.getByRole("button", { name: "Login" });
+
+    expect(loginButton).toBeInTheDocument();
+  });
+
+  it("Should load Header Component with cart item 0 ", () => {
+    render(
+      <BrowserRouter>
+        <Provider store={appStore}>
+          <Header />
+        </Provider>
+      </BrowserRouter>
+
+    );
+
+    const cartItems = screen.getByText("Cart(0-items)");
+
+    expect(cartItems).toBeInTheDocument();
+  });
+
+  it("Should load Header Component with cart  ", () => {
+    render(
+      <BrowserRouter>
+        <Provider store={appStore}>
+          <Header />
+        </Provider>
+      </BrowserRouter>
+
+    );
+
+    const cartItems = screen.getByText(/Cart/);
+
+    expect(cartItems).toBeInTheDocument();
+  });
+
+  it("Should change login button to logout onClick", () => {
+    render(
+      <BrowserRouter>
+        <Provider store={appStore}>
+          <Header />
+        </Provider>
+      </BrowserRouter>
+
+    );
+
+    const loginButton = screen.getByRole("button" , {name : "Login"});
+
+    fireEvent.click(loginButton);
+
+    const logoutButton = screen.getByRole("button" , {name : "Logout"});
+
+    expect(logoutButton).toBeInTheDocument();
+  });
+
+  
+});

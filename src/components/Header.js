@@ -1,4 +1,4 @@
-import Logo from "../assets/Logo.jpg";
+import {LOGO_URL} from "../utils/constant";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useStatus from "../utils/useStatus";
@@ -12,12 +12,12 @@ const Header = () => {
 
   // subscribing to the store using useselector
   const cartItems = useSelector((store) => store.cart.items);
-console.log(cartItems)
+
   return (
     <div className="flex justify-between bg-pink-100 shadow-lg sm:bg-yellow-50 lg:bg-green-50">
       <div className="logo-container">
         <Link to="/">
-          <img className="w-36" src={Logo} />
+          <img className="w-36" src={LOGO_URL} />
         </Link>
       </div>
       <div className="flex items-center">
